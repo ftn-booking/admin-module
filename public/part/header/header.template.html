@@ -26,11 +26,27 @@
 						Link B
 				</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item" ng-if="$root.user">
 				<a class="nav-link"
-					ui-sref="linkC"
+					ui-sref="profile"
 					ui-sref-active="active">
-						Link C
+						<i class="fas fa-user-circle"></i>
+						{{$root.user.email}}
+				</a>
+			</li>
+			<li class="nav-item" ng-if="!$root.user">
+				<a class="nav-link"
+					ui-sref="authentication"
+					ui-sref-active="active">
+						<i class="fas fa-sign-out-alt"></i>
+						Log In / Register
+				</a>
+			</li>
+			<li class="nav-item" ng-if="$root.user">
+				<a class="nav-link"
+					ng-click="$ctrl.logOut()">
+						<i class="fas fa-sign-in-alt"></i>
+						Log Out
 				</a>
 			</li>
 		</ul>

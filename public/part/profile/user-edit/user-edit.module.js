@@ -1,6 +1,5 @@
 'use strict';
 
-angular.module('core', [
-	'core.host',
+angular.module('profile.userEdit', [
 	'core.authentication'
 ]);
